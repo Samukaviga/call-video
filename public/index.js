@@ -2,7 +2,7 @@ const socket = io('/');
 const peer = new Peer({
 	config: {'iceServers': [
 	  { url: 'stun:stun.l.google.com:19302' },
-	  { url: 'turn:homeo@turn.bistri.com:80', credential: 'homeo' }
+	  { url: 'stun:stun.2.google.com:19302', credential: 'homeo' }
 	]} /* Sample servers, please use appropriate ones */
   });
 
