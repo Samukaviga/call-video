@@ -9,7 +9,7 @@ const peer = new Peer({
 let myVideoStream;
 let myId;
 
-//var videoGrid = document.getElementById('videoDiv') 
+var videoGrid = document.getElementById('videos') 
 //var myvideo = document.createElement('video'); //criando um elemento video
 
 myvideo = document.querySelector('#user-1');
@@ -41,7 +41,8 @@ navigator.mediaDevices.getUserMedia({ //solicitando a permicao do uso da camera
     call.on('stream' , userStream => {  //steam é MediaStream do peer remoto, os dados da camera 
       //addVideo(vid , userStream);
        
-        myvideo2.srcObject = stream; 
+        myvideo2.srcObject = userStream; 
+        videoGrid.append(myvideo2);
 
     })
 
@@ -50,8 +51,8 @@ navigator.mediaDevices.getUserMedia({ //solicitando a permicao do uso da camera
     })
 
     call.on("close", () => {
-        console.log(vid);
-        vid.remove();
+        //console.log(vid);
+       // vid.remove();
     })
 
     peerConnections[call.peer] = call;
@@ -64,6 +65,7 @@ navigator.mediaDevices.getUserMedia({ //solicitando a permicao do uso da camera
 
 peer.on('open' , (id)=>{ //Peer cria um ID aleatorio
   myId = id;
+ 
   socket.emit("newUser" , id , roomID); //retorna o ID criado pelo Peer 
 })
 
@@ -89,11 +91,15 @@ socket.on('userJoined' , id =>{ //recebendo o ID do cliente conectado
     //addVideo(vid , userStream);
    
     myvideo2.srcObject = userStream
+    
+    videoGrid.append(myvideo2);
+
 
   })
 
   call.on('close' , ()=>{ //fechando a chamada
-    vid.remove();
+    //myvideo2.remove();
+    // vid.remove();
     console.log("usuario desconectado")
   })
 

@@ -34,6 +34,7 @@ io.on("connection" , (socket)=>{
   
   socket.on('newUser' , (id , room)=>{ //Envia a solicitacao do ID e SALA e recebe
     
+    console.log(room);
     socket.join(room); //cria a sala e conecta a ela
     socket.to(room).broadcast.emit('userJoined' , id); //emite para todos clientes da sala menos para o conectado
     
