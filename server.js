@@ -22,12 +22,14 @@ app.get('/' , (req,res)=>{
 
 app.get('/' , (req,res)=>{ //pega o parametro passado na URL
    
-  //res.render('/sala' , {RoomId:req.params.room})
-  const room = "sala";
-
-  //console.log(req.params.room);
   // res.render('index' , {RoomId:req.params.room}); //guarda o nome na variavel RoomId 
 });
+
+app.get('/:room' , (req,res)=>{ //pega o parametro passado na URL
+   
+   //res.render('sala' , {RoomId:'sala'}); //guarda o nome na variavel RoomId 
+});
+
 
 
 io.on("connection" , (socket)=>{

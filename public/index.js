@@ -31,7 +31,6 @@ navigator.mediaDevices.getUserMedia({ //solicitando a permicao do uso da camera
 
   //addVideo(myvideo , stream); //adicionando o video mais os dados no Index
 
-
   peer.on('call' , call => { //fica escutando para atender a chamada
 
     call.answer(stream); //atende a chamada
@@ -66,7 +65,7 @@ navigator.mediaDevices.getUserMedia({ //solicitando a permicao do uso da camera
 peer.on('open' , (id)=>{ //Peer cria um ID aleatorio
   myId = id;
  
-  socket.emit("newUser" , id , roomID); //retorna o ID criado pelo Peer 
+  socket.emit("newUser" , id , roomName); //retorna o ID criado pelo Peer 
 })
 
 peer.on('error' , (err)=>{
