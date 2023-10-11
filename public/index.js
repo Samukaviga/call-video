@@ -1,11 +1,29 @@
 const socket = io('/');
-const peer = new Peer({
-	config: {'iceServers': [
-	  { url: 'stun:stun.l.google.com:19302' },
-	  { url: 'stun:stun.2.google.com:19302', credential: 'homeo' }
-	]} /* Sample servers, please use appropriate ones */
-  });
 
+const peer = new Peer({
+  config: {'iceServers': [
+    { url: 'stun:stun.2.google.com:19302', credential: 'homeo' },
+    {
+      urls: 'turn:relay1.expressturn.com:3478',
+      username: 'ef9THPOJWDL9NUUK7Z',
+      credential: '2Lsp3PJPVTjMOfPh'
+    } 
+
+  ]} /* Sample servers, please use appropriate ones */
+  
+  }); 
+
+/*
+
+const peer = new Peer({
+  config: {'iceServers': [
+    { url: 'stun:stun.l.google.com:19302' },
+    { url: 'stun:stun.2.google.com:19302', credential: 'homeo' }
+  ]} /* Sample servers, please use appropriate ones 
+  
+  });      
+
+*/
 let myVideoStream;
 let myId;
 
