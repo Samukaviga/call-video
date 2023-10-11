@@ -1,7 +1,7 @@
 const socket = io('/');
 
 const peer = new Peer({
-  config: {'iceServers': [
+	config: {'iceServers': [
     { url: 'stun:stun.2.google.com:19302', credential: 'homeo' },
     {
       urls: 'turn:relay1.expressturn.com:3478',
@@ -9,17 +9,17 @@ const peer = new Peer({
       credential: '2Lsp3PJPVTjMOfPh'
     } 
 
-  ]} /* Sample servers, please use appropriate ones */
+	]} /* Sample servers, please use appropriate ones */
   
   }); 
 
 /*
 
 const peer = new Peer({
-  config: {'iceServers': [
-    { url: 'stun:stun.l.google.com:19302' },
-    { url: 'stun:stun.2.google.com:19302', credential: 'homeo' }
-  ]} /* Sample servers, please use appropriate ones 
+	config: {'iceServers': [
+	  { url: 'stun:stun.l.google.com:19302' },
+	  { url: 'stun:stun.2.google.com:19302', credential: 'homeo' }
+	]} /* Sample servers, please use appropriate ones 
   
   });      
 
