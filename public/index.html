@@ -9,8 +9,10 @@
         <style>
             .sala {
                 display: block; /* Exibe como bloco */
-                padding: 10px; /* Espaçamento interno */
+                padding: 20px; /* Espaçamento interno */
                 width: 30%;
+                font-size: 30px;
+                text-align: center;
                 margin-bottom: 10px; /* Espaçamento inferior */
                 text-decoration: none; /* Remove sublinhado do link */
                 color: #ffffff; /* Cor do texto */
@@ -26,8 +28,17 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                
             }
+
+
+            .main{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: 5em;
+            }
+
         </style>
 <body>
     
@@ -38,16 +49,22 @@
         </a>
     </div>
 
-    <div id="div-id">
+    <div class="main">
+        <!-- ID -->
+        <div id="div-id">
+        </div>
 
+        <!-- Formulario -->
+        <form action="sala.html" method="GET">
+            <label for="">Sala</label>
+            <input type="text" name="room" >
+            <input type="submit" value="Entrar">
+        </form>
     </div>
-
-    <form action="sala.html" method="GET">
-        <label for="">Sala</label>
-        <input type="text" name="room" >
-        <input type="submit" value="Entrar">
-    </form>
     
+
+
+
 
     <script src="/socket.io/socket.io.js"></script>
     <script>

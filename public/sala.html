@@ -38,6 +38,18 @@
         background-color:red;
         cursor: pointer;
       }
+
+      .div-botoes{
+        display: flex;
+        justify-content: space-evenly;
+        
+      }
+
+      .botao-pausar {
+        background-color: rgb(183, 255, 0);
+
+      }
+
       video {
         width: 100%;
         height: 100%;
@@ -67,6 +79,7 @@
       const urlParams = new URLSearchParams(window.location.search);
       const roomName = urlParams.get('room');
 
+
     </script>
     <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js" defer></script>
     <script src="socket.io/socket.io.js" defer></script>
@@ -78,8 +91,35 @@
         <video id="user-2" autoplay playsinline></video>
     </div>
 
-    <button id="sair">sair</button>
-    
+    <div class="div-botoes">
+      <button id="sair">SAIR</button>
+      
+      <button id="pauseResumeButton" class="botao-pausar">PAUSAR</button>
+    </div>
+
   <footer></footer>
   </body>
+  <script>
+
+const pauseResumeButton = document.getElementById('pauseResumeButton');
+
+let isVideoPaused = false;
+
+pauseResumeButton.addEventListener('click', () => {
+  if (isVideoPaused) {
+    // Se o vídeo estiver pausado, retome a transmissão
+    myVideoStream.getVideoTracks()[0].enabled = true;
+    isVideoPaused = false;
+    pauseResumeButton.textContent = 'PAUSAR';
+  } else {
+    // Se o vídeo estiver ativo, pause a transmissão
+    myVideoStream.getVideoTracks()[0].enabled = false;
+    isVideoPaused = true;
+    pauseResumeButton.textContent = 'EXIBIR';
+  }
+});
+
+
+
+  </script>
 </html>
