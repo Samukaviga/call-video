@@ -47,7 +47,7 @@
         
       }
 
-      .botao-pausar {
+      .botao {
         background-color: rgb(183, 255, 0);
         padding: 2em;
         width: 100px;
@@ -80,7 +80,6 @@
       @media (max-width: 1002px) {
        
 
-
       }
 
     </style>
@@ -105,7 +104,9 @@
     <div class="div-botoes">
       <button id="sair">SAIR</button>
       
-      <button id="pauseResumeButton" class="botao-pausar">PAUSAR</button>
+      <button id="pauseResumeButton" class="botao">PAUSAR</button>
+
+      <button id="mutarVideo" class="botao" > MUTAR </button>
     </div>
 
   <footer></footer>
@@ -113,6 +114,7 @@
   <script>
 
 const pauseResumeButton = document.getElementById('pauseResumeButton');
+const mutarVideoBt = document.querySelector('#mutarVideo');
 
 let isVideoPaused = false;
 
@@ -128,6 +130,18 @@ pauseResumeButton.addEventListener('click', () => {
     isVideoPaused = true;
     pauseResumeButton.textContent = 'EXIBIR';
   }
+});
+
+mutarVideoBt.addEventListener('click', () => {
+
+  if(myvideo.muted == true){
+    myvideo.muted = false;
+    mutarVideoBt.textContent = 'DESMUTAR';
+  }else {
+    myvideo.muted = true;
+    mutarVideoBt.textContent = 'MUTAR';
+  }
+
 });
 
 
