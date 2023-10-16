@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video App</title>
     <style media="screen">
-      *{
-        margin: 0;
+     *{
+        margin: 0; padding: 0;
       }
       /*
       #videoDiv{
@@ -44,7 +44,6 @@
       .div-botoes{
         display: flex;
         justify-content: space-evenly;
-        
       }
 
       .botao {
@@ -59,7 +58,7 @@
         width: 100%;
         height: 100%;
         object-fit:cover;
-        border:2px solid white;
+
       }
 
       #videos {
@@ -67,7 +66,6 @@
         grid-template-columns: 1fr 1fr;
         column-gap: 1em;
         width: 100%;
-        padding: 10px;
       }
       
       video {
@@ -76,11 +74,63 @@
         background-color: rgb(63, 62, 62);
 
       }
+	  
+	  #user-1{
+		position: absolute;
+		width: 160px;
+		height: 160px;
+		right: 7%;
+		top: 52%;
+		border-radius: 250px;
+		z-index:2;
+	}
+	
+	#user-2{
+		position: absolute;
+		width: 90%;
+		height: 75%;
+		left: 5%;
+		top: 2%;
+	}
+	
+	.div-botoes{
+		position: absolute;
+		top: 85%;
+		width: 90%;
+		left: 5%;
+	}
 
-      @media (max-width: 1002px) {
-       
+  @media (max-width: 1002px) {
+	
+	*{padding: 0; margin: 0;}
+	
+	
+	#user-1{
+		position: absolute;
+		width: 160px;
+		height: 160px;
+		right: 7%;
+		top: 52%;
+		border-radius: 250px;
+		z-index:2;
+	}
+	
+	#user-2{
+		position: absolute;
+		width: 90%;
+		height: 70%;
+		left: 5%;
+		top: 2%;
+	}
+	
+	.div-botoes{
+		position: absolute;
+		top: 75%;
+		width: 90%;
+		left: 5%;
+	}
 
-      }
+  }
 
     </style>
     <script type="text/javascript">
@@ -102,7 +152,7 @@
     </div>
 
     <div class="div-botoes">
-      <button id="sair">SAIR</button>
+      <button id="sair"> SAIR</button>
       
       <button id="pauseResumeButton" class="botao">PAUSAR</button>
 
