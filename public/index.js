@@ -5,8 +5,8 @@ const peer = new Peer({
     { url: 'stun:stun.2.google.com:19302', credential: 'homeo' },
     {
       urls: 'turn:relay1.expressturn.com:3478',
-      username: 'ef9THPOJWDL9NUUK7Z',
-      credential: '2Lsp3PJPVTjMOfPh'
+      username: 'ef2UM0NWCOQCBI6CKI',
+      credential: '2vEdgvpXi0DteWxj'
     } 
 
 	]} /* Sample servers, please use appropriate ones */
